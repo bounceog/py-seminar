@@ -11,3 +11,19 @@ def load_data():
                          'cholesterin_bekannt': True if curr[8] == 'WAHR' else False, 'in_behandlung': True if curr[9] == 'WAHR' else False, 'schaetzwert_bp_sys': None if curr[10] == 'null' else int(curr[10]), 'schaetzwert_by_dia': None if curr[11] == 'null' else int(curr[11]), 'messwert_bp_sys': None if curr[12] == 'null' else int(curr[12]), 'messwert_bp_dia': None if curr[13] == 'null' else int(curr[13])})
 
     return data
+
+#   Je nach Key werden alle Values ausgelesen und gezaehlt
+#
+#   key_alloc(data, 'geburtsjahr') => liefert alle in den Daten auftretende Geburtsjahre und zaehlt dessen Haeufigkeiten
+def key_alloc(data, key):
+    res = {}
+
+    for item in data:
+        if item[key] in res:
+            res[item[key]] += 1
+        else:
+            res[item[key]] = 1
+
+    return res
+
+def 
