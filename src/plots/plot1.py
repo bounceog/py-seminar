@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 sys.path.append('src')
+
 from utils import *
 
 
@@ -39,5 +40,8 @@ if __name__ == "__main__":
     global data
     data = load_data()
 
+    res = key_alloc(data, 'geburtsjahr')
+    print(res)
+
     # process()
-    show()
+    #show()
