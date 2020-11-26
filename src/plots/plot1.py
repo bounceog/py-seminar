@@ -38,6 +38,8 @@ def show():
 if __name__ == "__main__":
     global data
     data = load_data()
-
+    for line in data:
+        print(line['terminal'])
+    
     # process()
-    show()
+    # show()
