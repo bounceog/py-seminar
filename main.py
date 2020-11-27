@@ -6,8 +6,10 @@ def init_menu():
     menu = ConsoleMenu("matplotlib: Visualization with Python")
 
     plot1_item = CommandItem("Plot1", "python src/plots/plot1.py")
+    pie_chart_item = CommandItem("Gender Allocation", "python src/plots/gender_alloc.py")
 
     menu.append_item(plot1_item)
+    menu.append_item(pie_chart_item)
 
     menu.show()
     menu.join()

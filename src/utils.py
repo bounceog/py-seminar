@@ -14,8 +14,8 @@ def load_data():
 
 #   Je nach Key werden alle Values ausgelesen und gezaehlt
 #
-#   key_alloc(data, 'geburtsjahr') => liefert alle in den Daten auftretende Geburtsjahre und zaehlt dessen Haeufigkeiten
-def key_alloc(data, key):
+#   value_alloc(data, 'geburtsjahr') => liefert alle in den Daten auftretende Geburtsjahre und zaehlt dessen Haeufigkeiten
+def value_alloc(data, key):
     res = {}
 
     for item in data:
@@ -26,4 +26,6 @@ def key_alloc(data, key):
 
     return res
 
-def 
+
+def get_data_size(data):
+    return len(data)
