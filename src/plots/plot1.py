@@ -37,11 +37,14 @@ def show():
 
 
 if __name__ == "__main__":
-    global data
     data = load_data()
 
+<<<<<<< HEAD
     res = key_alloc(data, 'raucher')
+=======
+    res = value_alloc(data, 'geburtsjahr')
+>>>>>>> ab4e3d11c2536135a57c861e70ed741dae7eff6d
     print(res)
 
     # process()
-    #show()
+    # show()
