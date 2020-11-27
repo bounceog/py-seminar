@@ -6,6 +6,8 @@ def init_menu():
     menu = ConsoleMenu("matplotlib: Visualization with Python")
 
     plot1_item = CommandItem("Plot1", "python src/plots/plot1.py")
+    plot1_item = CommandItem("Plot2", "python src/plots/plot2.py")
+    plot1_item = CommandItem("Plot3", "python src/plots/plot3.py")
     menu.append_item(plot1_item)
     menu.append_item(plot2_item)
     menu.append_item(plot3_item)

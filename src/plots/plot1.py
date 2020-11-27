@@ -40,7 +40,7 @@ if __name__ == "__main__":
     global data
     data = load_data()
 
-    res = key_alloc(data, 'geburtsjahr')
+    res = key_alloc(data, 'raucher')
     print(res)
 
     # process()

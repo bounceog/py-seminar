@@ -25,5 +25,3 @@ def key_alloc(data, key):
             res[item[key]] = 1
 
     return res
-
-def 
