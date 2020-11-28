@@ -25,10 +25,19 @@ def value_alloc(data, key):
             res[item[key]] = 1
 
     return res
-<<<<<<< HEAD
-=======
 
 
 def get_data_size(data):
     return len(data)
->>>>>>> ab4e3d11c2536135a57c861e70ed741dae7eff6d
+
+def get_boolitems(data,key):
+    res = []
+
+    for item in data:
+        if item[key]:
+            res.append(item)
+            
+
+    return res
+        
+    
