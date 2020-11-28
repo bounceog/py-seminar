@@ -22,8 +22,7 @@
 
 ### Entwicklung
 
-1. In `cd ./py-seminar/src/plots` wechseln um mit ...
-2. ... `python plotXYZ.py` zu testen
+1. mit `python src/plots/plotXYZ.py` testen
 
 ![alt text](https://media2.giphy.com/media/xT8qBsOjMOcdeGJIU8/giphy.gif?cid=ecf05e47ndy1aw9peaqatp62gyehoo6qrrwnrdd0rgin1x4n&rid=giphy.gif "Meme")
 
