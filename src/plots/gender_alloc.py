@@ -9,7 +9,7 @@ from utils import *
 
 
 def process():
-    gender_alloc = value_alloc(data, 'geschlecht')
+    gender_alloc = values_alloc(data, 'geschlecht')
     data_size = get_data_size(data)
 
     result = []

@@ -12,10 +12,9 @@ def load_data():
 
     return data
 
-#   Je nach Key werden alle Values ausgelesen und gezaehlt
-#
-#   value_alloc(data, 'geburtsjahr') => liefert alle in den Daten auftretende Geburtsjahre und zaehlt dessen Haeufigkeiten
-def value_alloc(data, key):
+
+#   values_alloc(data, 'geburtsjahr') => liefert alle in den Daten auftretende Geburtsjahre und zaehlt dessen Haeufigkeiten
+def values_alloc(data, key):
     res = {}
 
     for item in data:
@@ -23,6 +22,20 @@ def value_alloc(data, key):
             res[item[key]] += 1
         else:
             res[item[key]] = 1
+
+    return res
+
+
+#   spec_key_alloc(data, 'geburtsjahr', 'terminal', '1') => liefert alle in den Daten auftretenden "Geburtsjahre-Verteilungen" welche an Terminal 1 waren
+def spec_key_alloc(data, key, spec_key, spec_value):
+    res = {}
+    
+    for item in data:
+        if item[spec_key] == spec_value:
+            if item[key] in res:
+                res[item[key]] += 1
+            else:
+                res[item[key]] = 1
 
     return res
 

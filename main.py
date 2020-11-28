@@ -16,14 +16,14 @@ def init_menu():
 
 
 if __name__ == "__main__":
-    # print("""                                                                               
-    #        db        .g8^^^bgd       db      `7MM^^^Yp, 
-    #       ;MM:     .dP'     `M      ;MM:       MM    Yb 
-    #      ,V^MM.    dM'       `     ,V^MM.      MM    dP 
-    #     ,M  `MM    MM             ,M  `MM      MM^^^bg. 
-    #     AbmmmqMA   MM.            AbmmmqMA     MM    `Y 
-    #    A'     VML  `Mb.     ,'   A'     VML    MM    ,9 
-    #  .AMA.   .AMMA.  `"bmmmd'  .AMA.   .AMMA..JMMmmmd9                                                                     
-    # """)
+    print("""                                                                               
+           db        .g8^^^bgd       db      `7MM^^^Yp, 
+          ;MM:     .dP'     `M      ;MM:       MM    Yb 
+         ,V^MM.    dM'       `     ,V^MM.      MM    dP 
+        ,M  `MM    MM             ,M  `MM      MM^^^bg. 
+        AbmmmqMA   MM.            AbmmmqMA     MM    `Y 
+       A'     VML  `Mb.     ,'   A'     VML    MM    ,9 
+     .AMA.   .AMMA.  `"bmmmd'  .AMA.   .AMMA..JMMmmmd9                                                                     
+    """)
 
     init_menu()

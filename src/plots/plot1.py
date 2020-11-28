@@ -39,8 +39,11 @@ def show():
 if __name__ == "__main__":
     data = load_data()
 
-    res = value_alloc(data, 'geburtsjahr')
-    print(res)
+    res = spec_key_alloc(data, 'geburtsjahr', 'terminal', '1')
+    print("spec_key_alloc(data, 'geburtsjahr', 'terminal', '1')", res)
+
+    res = values_alloc(data, 'geburtsjahr')
+    print("values_alloc(data, 'geburtsjahr')", res)
 
     # process()
     # show()
