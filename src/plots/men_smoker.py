@@ -9,26 +9,27 @@ from utils import *
 
 
 def process():
-    gender_alloc = values_alloc(data, 'geschlecht')
+    smoker_alloc = spec_key_alloc(data, 'geschlecht', 'raucher', True)
     data_size = get_data_size(data)
 
     result = []
 
-    for key in gender_alloc:
-        result.append(gender_alloc[key] / data_size * 100)
+    for key in smoker_alloc:
+        result.append(smoker_alloc[key] / data_size * 100)
 
     return result
 
 
 def show():
-    labels = 'Männer', 'Frauen'
-    explode = (0.1, 0)
+    labels = 'Raucher', 'Nichtraucher'
+    explode = (0, 0)
 
     fig1, ax1 = plt.subplots()
     ax1.pie(proc_data, explode=explode, labels=labels, autopct='%1.1f%%',
             shadow=True, startangle=90)
     ax1.axis('equal')
 
+    plt.title('Männer')
     plt.show()
 
 
