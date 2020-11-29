@@ -43,7 +43,8 @@ def spec_key_alloc(data, key, spec_key, spec_value):
 def get_data_size(data):
     return len(data)
 
-def get_boolitems(data,key):
+
+def get_boolitems(data, key):
     res = []
 
     for item in data:

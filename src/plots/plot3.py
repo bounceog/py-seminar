@@ -16,12 +16,24 @@ from utils import *
 data = load_data()
 
 raucher = get_boolitems(data,'raucher')
-data_rauch = value_alloc(raucher,'blutzucker_bekannt')
-data_normal = value_alloc(data,'blutzucker_bekannt')
+data_rauch = values_alloc(raucher,'blutzucker_bekannt')
+data_normal = values_alloc(data,'blutzucker_bekannt')
 
-# a = str((data_rauch[True]/(data_rauch[True]+data_rauch[False]))*100)
-print(data_rauch[True])
-print((data_rauch[True]+data_rauch[False]))
+raucher = float(data_rauch[True])
+
+alle = float(data_rauch[True] + data_rauch[False])
+
+
+zahl = raucher/alle
+
+print(zahl)
+print(raucher / alle)
+print(type(raucher))
+print(type(alle))
+
+
+#print(data_rauch[True])
+#print((data_rauch[True] + data_rauch[False]))
 # print(value_alloc(raucher,'blutzucker_bekannt'))
 
 
