@@ -10,12 +10,12 @@ from utils import *
 
 def process():
     smoker_alloc = spec_key_alloc(data, 'geschlecht', 'raucher', True)
-    data_size = values_alloc(data, 'geschlecht')['m']
+    data_size = values_alloc(data, 'geschlecht')['f']
 
-    smoker_perc = smoker_alloc['m'] / data_size * 100
+    smoker_perc = smoker_alloc['f'] / data_size * 100
     smoker_gen = 100 - smoker_perc
 
-    return [smoker_alloc['m'] / data_size * 100, smoker_gen]
+    return [smoker_alloc['f'] / data_size * 100, smoker_gen]
 
 
 def show():
@@ -27,7 +27,7 @@ def show():
             shadow=True, startangle=90)
     ax1.axis('equal')
 
-    plt.title('Männer')
+    plt.title('Frauen')
     plt.show()
 
 
