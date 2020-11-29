@@ -2,31 +2,41 @@
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.ticker import MaxNLocator
 
 sys.path.append('src')
 
 from utils import *
 
-# TODO
+
 def process():
-    print()
+    sub_finding = spec_key_alloc(data, 'befinden', 'raucher', True)
+
+    res = {
+        'x': [],
+        'y': []
+    }
+
+    for key in sub_finding:
+        res['x'].append(int(key))
+        res['y'].append(sub_finding[key])
+    
+    return res
 
 
 def show():
-    x1 = np.linspace(0.0, 5.0)
-    y1 = np.cos(2 * np.pi * x1) * np.exp(-x1)
-
     plt.subplots()
-    plt.plot(x1, y1, 'o-')
+    plt.plot(np.sort(proc_data['x']), np.array(proc_data['y']), 'o--')
 
     plt.title('Subjektives Befinden bei Rauchern')
-    plt.ylabel('Bewertungsskala')
+    plt.ylabel('Anzahl Stimmen')
+    plt.xlabel('Bewertungsskala')
 
     plt.show()
 
 
 if __name__ == "__main__":
     data = load_data()
-    # proc_data = process()
+    proc_data = process()
 
     show()
