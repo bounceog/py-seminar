@@ -1,5 +1,6 @@
 import sys
 import csv
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,38 +11,52 @@ from utils import *
         
 # print('hello world')
 
-# plt.style.use('fivethirtyeight')
+plt.style.use('fivethirtyeight')
 
 # plt.legend()
-data = load_data()
+# data = load_data()
 
-raucher = get_boolitems(data,'raucher')
-data_rauch = values_alloc(raucher,'blutzucker_bekannt')
-data_normal = values_alloc(data,'blutzucker_bekannt')
+data = pd.read_csv('data.csv', sep=';')
+# print(data)
 
-raucher = float(data_rauch[True])
+indexNames = data[ data['geburtsjahr'] < 1920 ].index
+data.drop(indexNames, inplace = True)
+indexNames = data[ data['geburtsjahr'] > 1991 ].index
+data.drop(indexNames, inplace = True)
 
-alle = float(data_rauch[True] + data_rauch[False])
+# print(data)
+# print(data2)
+grouped_data = data.groupby('geburtsjahr')
 
+index = np.arange(20,86,1)
 
-zahl = raucher/alle
+keys = grouped_data.groups.keys()
+list_keys = list(keys)
+print(type(list_keys))
+# for key in keys:
+#     print(key)
 
-print(zahl)
-print(raucher / alle)
-print(type(raucher))
-print(type(alle))
+values1 = grouped_data['messwert_bp_sys'].mean().values
+values2 = grouped_data['messwert_bp_dia'].mean().values
 
+# for key in values:
+#     print(key)
+a = []
+for key in list_keys:
+    a.append(2006-key)
+print(a)
 
-#print(data_rauch[True])
-#print((data_rauch[True] + data_rauch[False]))
-# print(value_alloc(raucher,'blutzucker_bekannt'))
+plt.plot(a,values1,label='Systolisch', color='k')
+plt.plot(a,values2,label='Diastolisch', color='r')
 
+plt.legend()
 
+plt.grid(True)
 
-# plt.xlabel('Eingangszahlahl')
-# plt.ylabel('Ausgangszahl')
-# plt.title('Qudratzahlen bis 5')
+plt.xlabel('Geburtsjahr')
+plt.ylabel('Durchschnitt')
+plt.title('Alter - Blutdruck')
 
-
-# # plt.grid(True)
-# plt.show()
+# ax = plt.gca()
+# ax.invert_xaxis()
+plt.show()
