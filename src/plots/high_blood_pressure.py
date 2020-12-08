@@ -19,25 +19,29 @@ def process():
     bp_sys_smoker_alloc = spec_key_alloc(data, 'messwert_bp_sys', 'raucher', True)
     bp_sys_nonsmoker_alloc = spec_key_alloc(data, 'messwert_bp_sys', 'raucher', False)
 
+    # print(bp_sys_smoker_alloc)
+
+    # sys.exit()
+
     for key in bp_sys_smoker_alloc:
-        if key in range(0, 105):
-            res['raucher'][0] += 1
-        elif key in range(105, 120):
-            res['raucher'][1] += 1
-        elif key in range(120, 130):
-            res['raucher'][2] += 1
+        if key in range(0, 104):
+            res['raucher'][0] += bp_sys_smoker_alloc[key]
+        elif key in range(105, 119):
+            res['raucher'][1] += bp_sys_smoker_alloc[key]
+        elif key in range(120, 129):
+            res['raucher'][2] += bp_sys_smoker_alloc[key]
         elif key in range(130, 200):
-            res['raucher'][3] += 1
+            res['raucher'][3] += bp_sys_smoker_alloc[key]
     
     for key in bp_sys_nonsmoker_alloc:
         if key in range(0, 105):
-            res['nichtraucher'][0] += 1
+            res['nichtraucher'][0] += bp_sys_nonsmoker_alloc[key]
         elif key in range(105, 120):
-            res['nichtraucher'][1] += 1
+            res['nichtraucher'][1] += bp_sys_nonsmoker_alloc[key]
         elif key in range(120, 130):
-            res['nichtraucher'][2] += 1
+            res['nichtraucher'][2] += bp_sys_nonsmoker_alloc[key]
         elif key in range(130, 200):
-            res['nichtraucher'][3] += 1
+            res['nichtraucher'][3] += bp_sys_nonsmoker_alloc[key]
 
     return res
 
