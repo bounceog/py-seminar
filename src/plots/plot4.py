@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 sys.path.append('src')
+
 from utils import *
 
 
@@ -21,7 +22,7 @@ for index in data:
 
 
 a = data['schaetzwert_bp_sys']-data['messwert_bp_sys']
-print(a)
+# print(a)
 
 for index in a:
 

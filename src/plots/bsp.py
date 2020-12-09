@@ -1,25 +1,44 @@
+# coding: utf8 
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
+sys.path.append('src')
 
-x_indizes = np.arange(-5,6)
-
-y_werte = [25,16,9,4,1,0,1,4,9,16,20]
-
-
-y_werte = np.power(x_indizes,3)
-
-print()
-print(y_werte)
-print()
-
-plt.plot(x_indizes, y_werte)
+from utils import *
 
 
-plt.show()
+def process():
+    # TODO
+    print('')
 
-# y = np.square(x_ndarray)
+def show():
+    x_indizes = np.arange(-5,6)
 
-# plt.plot(x_ndarray, y)
+    y_werte = [25,16,9,4,1,0,1,4,9,16,20]
+    y_werte = np.power(x_indizes,3)
 
-# plt.show()
+    fig, ax = plt.subplots()
+
+    line1, = ax.plot(x_indizes, y_werte, linestyle='dashed', label="Line 1")
+    line2, = ax.plot(x_indizes, y_werte + 10, linestyle='-.', label="Line 2")
+
+    labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
+    plt.xticks(x_indizes, labels)
+
+    ax.set_xlabel('x-label', fontsize=18)
+    ax.set_ylabel('y-label', fontsize=18)
+
+    ax.set_title('Title', fontsize=24)
+
+    ax.legend()
+
+    plt.show()
+
+
+
+if __name__ == "__main__":
+    data = load_data()
+    # proc_data = process()
+
+    show()

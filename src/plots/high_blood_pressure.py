@@ -9,19 +9,14 @@ from utils import *
 
 # TODO
 def process():
-    # messwert_bp_dia
-
     res = {
         'raucher': [0, 0, 0, 0],
         'nichtraucher': [0, 0, 0, 0]
     }
 
+    smokers_num = values_alloc(data, 'raucher')
     bp_sys_smoker_alloc = spec_key_alloc(data, 'messwert_bp_sys', 'raucher', True)
     bp_sys_nonsmoker_alloc = spec_key_alloc(data, 'messwert_bp_sys', 'raucher', False)
-
-    # print(bp_sys_smoker_alloc)
-
-    # sys.exit()
 
     for key in bp_sys_smoker_alloc:
         if key in range(0, 104):
@@ -43,6 +38,13 @@ def process():
         elif key in range(130, 200):
             res['nichtraucher'][3] += bp_sys_nonsmoker_alloc[key]
 
+    for key in res: 
+        for i in range(len(res[key])):
+            if key == 'raucher':
+                res[key][i] = round(res[key][i] / smokers_num[True] * 100, 2)
+            else:
+                res[key][i] = round(res[key][i] / smokers_num[False] * 100, 2)
+
     return res
 
 
@@ -57,7 +59,7 @@ def show():
     rects2 = ax.bar(x + width/2, proc_data['nichtraucher'], width, label='Nichtraucher')
 
     ax.set_ylabel('Anzahl Patienten')
-    ax.set_title('Bluthochdruckverteilung von Rauchern und Nichtrauchern')
+    ax.set_title('Bluthochdruckverteilung von Rauchern und Nichtrauchern in %')
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
     ax.legend()
