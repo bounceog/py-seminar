@@ -9,3 +9,12 @@
 1. `git clone https://github.com/bounceog/py-seminar.git`
 2. `cd ./py-seminar`
 3. `pip install -r pipme.txt`
+
+
+### Usage
+
+## CLI
+![alt text](https://cdn.discordapp.com/attachments/571411140391862309/789119699530809394/seminar.gif "CLI")
+
+## Plot
+![alt text](https://cdn.discordapp.com/attachments/571411140391862309/789121364282966026/seminar2.gif "CLI")
